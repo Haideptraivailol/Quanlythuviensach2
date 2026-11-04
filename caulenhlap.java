@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Mangvalist{
+public class caulenhlap{
     static Scanner sc = new Scanner(System.in);
 
     // Dữ liệu dùng chung
