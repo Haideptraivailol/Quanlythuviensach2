@@ -1,25 +1,26 @@
-import java.util.ArrayList;
-
 public class Test {
     public static void main(String[] args) {
-        // Yêu cầu 3: tạo đối tượng từ lớp Sach
+        // Yêu cầu 4: tạo đối tượng bằng constructor đầy đủ
         Sach s1 = new Sach("S01", "Lập trình Java", "Nguyễn Văn A", 2020, 10);
-        Sach s2 = new Sach("S02", "Cấu trúc dữ liệu", "Trần Thị B", 2018, 5);
-        Sach s3 = new Sach("S03", "Cơ sở dữ liệu", "Lê Văn C", 2022, 8);
-
-        System.out.println("=== Thông tin 1 cuốn sách ===");
+        System.out.println("=== Sách hợp lệ ===");
         s1.hienThiThongTin();
 
-        // Yêu cầu 4: quản lý danh sách bằng ArrayList
-        ArrayList<Sach> danhSach = new ArrayList<>();
-        danhSach.add(s1);
-        danhSach.add(s2);
-        danhSach.add(s3);
-        System.out.println("=== Danh sách tất cả sách ===");
-        for (Sach s : danhSach) {
-            s.hienThiThongTin();
-        }
+        // Yêu cầu 2: dùng getter/setter
+        s1.setTieuDe("Java nâng cao");
+        System.out.println("Tiêu đề mới: " + s1.getTieuDe());
 
-        System.out.println("Tổng số đầu sách: " + danhSach.size());
+        // Yêu cầu 3: thử dữ liệu sai
+        System.out.println("\n=== Thử dữ liệu không hợp lệ ===");
+        s1.setNamXuatBan(2100);   // lớn hơn năm hiện tại
+        s1.setNamXuatBan(-5);     // âm
+        s1.setSoLuong(-3);        // số lượng âm
+
+        System.out.println("\n=== Sau khi thử (giá trị cũ phải giữ nguyên) ===");
+        s1.hienThiThongTin();
+
+        // Dữ liệu hợp lệ thì được cập nhật
+        s1.setSoLuong(25);
+        s1.setNamXuatBan(2023);
+        s1.hienThiThongTin();
     }
 }
